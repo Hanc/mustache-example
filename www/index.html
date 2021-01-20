@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script src="/xuni/bundle.js"></script>
+
+    <script>
+        var templateStr1 = `今天不错呀小{{name}}`;
+        var templateStr = `
+        <div>
+        <ol>
+            {{#student}}
+            <li>
+                学生{{item.name}}的爱好是
+                <ol>
+                    {{#item.hobbies}}
+                    <li>{{.}}</li>
+                    {{/item.hobbies}}
+                </ol>
+            </li>
+            {{/student}}
+        </ol>
+    </div>
+        `;
+        var data = {};
+
+        Template.render(templateStr, data);
+    </script>
+</body>
+</html>
